@@ -80,7 +80,6 @@ class KeyEvent: NSObject {
     }
 
     func eventCallback(proxy: CGEventTapProxy, type: CGEventType, event: CGEvent) -> Unmanaged<CGEvent>? {
-
         // Gateway to exit in case we get our whole keyboard stuck
         let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
         if keyCode == 12 { // Q key (or ' key on Drovak)
@@ -98,12 +97,12 @@ class KeyEvent: NSObject {
         if symbols.count == 0 {
             // print("Keep it")
             return Unmanaged.passUnretained(event)
-        } else if symbols.count > 0 {
+        } else {
             for symbol in symbols {
                 self.pressKey(symbol: symbol)
             }
-        }
 
-        return Unmanaged.passUnretained(event)
+            return nil
+        }
     }
 }
