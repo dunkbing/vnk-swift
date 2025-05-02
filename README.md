@@ -1,4 +1,4 @@
-Swift 3.0+
+Swift 5.9+
 
 Build:
 
@@ -7,4 +7,3 @@ Build:
 Run:
 
     sudo .build/debug/vnk-debug # Need sudo to capture keyboard
-
