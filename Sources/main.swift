@@ -5,8 +5,9 @@ func g(_ c: String) -> UniChar {
 }
 
 var keyMapping = KeyMapping()
-var inputMethod = InputMethod()
+//var inputMethod = InputMethod()
+var inputMethod = TelexInputMethod()
 var test = KeyMappingTests()
 if test.run() {
-    _ = KeyEvent()
 }
+_ = KeyEvent()
